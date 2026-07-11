@@ -8,7 +8,7 @@
 CREATE DATABASE website;
 ```
 
-![Create website database](images/task2-1.png)
+![Create website database](images/Task2-1.png)
 
 ### 2-2 Create the `member` table
 
@@ -25,7 +25,7 @@ CREATE TABLE member (
 );
 ```
 
-![Create member table](images/task2-2.png)
+![Create member table](images/Task2-2.png)
 
 ---
 
@@ -43,7 +43,7 @@ VALUES
     ('Eason', 'eason@example.com', 'eason123', 15);
 ```
 
-![Insert members](images/task3-1.png)
+![Insert members](images/Task3-1.png)
 
 ### 3-2 Select all members
 
@@ -51,7 +51,7 @@ VALUES
 SELECT * FROM member;
 ```
 
-![Select all members](images/task3-2.png)
+![Select all members](images/Task3-2.png)
 
 ### 3-3 Select all members ordered by time descending
 
@@ -60,7 +60,7 @@ SELECT * FROM member
 ORDER BY time DESC;
 ```
 
-![Order members by time](images/task3-3.png)
+![Order members by time](images/Task3-3.png)
 
 ### 3-4 Select the second to fourth rows
 
@@ -70,7 +70,7 @@ ORDER BY time DESC
 LIMIT 3 OFFSET 1;
 ```
 
-![Select second to fourth rows](images/task3-4.png)
+![Select second to fourth rows](images/Task3-4.png)
 
 ### 3-5 Select members where email is `test@test.com`
 
@@ -79,7 +79,7 @@ SELECT * FROM member
 WHERE email = 'test@test.com';
 ```
 
-![Select by email](images/task3-5.png)
+![Select by email](images/Task3-5.png)
 
 ### 3-6 Select members where name contains `es`
 
@@ -88,7 +88,7 @@ SELECT * FROM member
 WHERE name LIKE '%es%';
 ```
 
-![Select name containing es](images/task3-6.png)
+![Select name containing es](images/Task3-6.png)
 
 ### 3-7 Select by email and password
 
@@ -98,7 +98,7 @@ WHERE email = 'test@test.com'
 AND password = 'test';
 ```
 
-![Select by email and password](images/task3-7.png)
+![Select by email and password](images/Task3-7.png)
 
 ### 3-8 Update the member name
 
@@ -108,7 +108,7 @@ SET name = 'test2'
 WHERE email = 'test@test.com';
 ```
 
-![Update member name](images/task3-8.png)
+![Update member name](images/Task3-8.png)
 
 ---
 
@@ -121,7 +121,7 @@ SELECT COUNT(*) AS total_members
 FROM member;
 ```
 
-![Count members](images/task4-1.png)
+![Count members](images/Task4-1.png)
 
 ### 4-2 Sum all follower counts
 
@@ -130,7 +130,7 @@ SELECT SUM(follower_count) AS total_followers
 FROM member;
 ```
 
-![Sum follower counts](images/task4-2.png)
+![Sum follower counts](images/Task4-2.png)
 
 ### 4-3 Calculate the average follower count
 
@@ -139,7 +139,7 @@ SELECT AVG(follower_count) AS average_followers
 FROM member;
 ```
 
-![Average follower count](images/task4-3.png)
+![Average follower count](images/Task4-3.png)
 
 ### 4-4 Calculate the average of the top two follower counts
 
@@ -153,7 +153,7 @@ FROM (
 ) AS top_two;
 ```
 
-![Average top two follower counts](images/task4-4.png)
+![Average top two follower counts](images/Task4-4.png)
 
 ---
 
@@ -172,7 +172,7 @@ CREATE TABLE message (
 );
 ```
 
-![Create message table](images/task5-1.png)
+![Create message table](images/Task5-1.png)
 
 ### 5-1_2 Insert message data
 
@@ -188,7 +188,7 @@ VALUES
     (1, 'Another message from test user.', 15);
 ```
 
-![Insert message data](images/task5-1_2.png)
+![Insert message data](images/Task5-1_2.png)
 
 ### 5-2 Select all messages with sender names
 
@@ -204,7 +204,7 @@ INNER JOIN member
 ON message.member_id = member.id;
 ```
 
-![Select all messages](images/task5-2.png)
+![Select all messages](images/Task5-2.png)
 
 ### 5-3 Select messages from `test@test.com`
 
@@ -222,7 +222,7 @@ ON message.member_id = member.id
 WHERE member.email = 'test@test.com';
 ```
 
-![Select messages by email](images/task5-3.png)
+![Select messages by email](images/Task5-3.png)
 
 ### 5-4 Average like count from `test@test.com`
 
@@ -234,7 +234,7 @@ ON message.member_id = member.id
 WHERE member.email = 'test@test.com';
 ```
 
-![Average like count by email](images/task5-4.png)
+![Average like count by email](images/Task5-4.png)
 
 ### 5-5 Average like count grouped by email
 
@@ -248,4 +248,4 @@ ON message.member_id = member.id
 GROUP BY member.email;
 ```
 
-![Average like count grouped by email](images/task5-5.png)
+![Average like count grouped by email](images/Task5-5.png)
