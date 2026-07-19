@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>錯誤頁面</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+
+<body>
+    <header class="page-header">
+        <h1>失敗頁面</h1>
+    </header>    
+
+    <main class="error-container">
+        <p>{{ message }}</p>
+
+        <a href="/">返回頁面</a>
+    </main>
+</body>
+</html>

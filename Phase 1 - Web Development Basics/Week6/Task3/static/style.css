@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: #333333;
+    font-family: Arial, "Noto Sans TC", sans-serif;
+}
+
+.page-header {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+    background-color: #223b4d;
+    border-top: none;
+    text-align: center;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid #dddddd;
+}
+
+.form-section {
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid #dddddd;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+}
+
+.form-section h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.form-row label {
+    width: 60px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-row input {
+    width: 220px;
+    padding: 6px;
+}
+
+button {
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+.member-container,
+.error-container {
+    width: 100%;    
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid #dddddd;
+    text-align: center;
+}
+
+.member-container p,
+.error-container p {
+    margin: 20px;
+    font-size: 18px;
+}
+
+.member-container a,
+.error-container a {
+    color: #6a3f91;
+}
