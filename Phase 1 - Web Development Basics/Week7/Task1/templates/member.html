@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員頁面</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=2">
+</head>
+
+<body>
+    <header class="page-header">
+        <h1>歡迎光臨，這是會員頁</h1>
+    </header>
+
+    <main class="member-container">
+        <section class="member-section">
+            <p>
+                <strong>{{ name }}</strong>，歡迎登入系統
+            </p>
+
+            <a href="/signout">登出系統</a>
+        </section>
+
+        <section class="mcp-section">
+            <h2>MCP 伺服器設定</h2>
+
+            <p> 請使用 <code>http://127.0.0.1:8000/mcp/</code> 網址 </p>
+
+            <p>點擊產生 Token 取得金鑰</p>
+
+            <button id="generate-token-button" type="button">
+                產生 Token
+            </button>
+
+            <p id="access-token" class="access-token"></p>
+
+            <p id="token-message" class="token-message"></p>
+        </section>
+
+        <section class="message-section">
+            <h2>快來留言吧</h2>
+
+            <form id="message-form">
+                    <label for="message-content">內容</label>
+
+                    <input id="message-content" type="text">
+
+                <button type="submit">送出</button>
+            </form>
+        </section>
+
+        <section class="message-list">
+            <h2>留言紀錄</h2>
+
+            <div id="messages-container">
+                <p>載入中……</p>
+            </div>
+        </section>
+    </main>
+
+   <script src="{{ url_for('static', path='/member.js') }}?v=3"></script>
+</body>
+</html>
