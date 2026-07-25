@@ -17,11 +17,11 @@ from pydantic import BaseModel
 from typing import Any, cast
 
 mcp = FastMCP(
-    name="Testing Message Website"
+    name="Testing_Message_Website"
 )
 
 @mcp.tool(
-    name="Create Message",
+    name="create_message",
     description=(
         "Create a new message in "
         "Testing Message Website."
@@ -30,23 +30,22 @@ mcp = FastMCP(
 async def create_message_tool(
     content: str
 ) -> dict[str, bool]:
-    headers = get_http_headers()
+    headers = get_http_headers(
+        include={"authorization"}
+    )
 
     authorization = headers.get("authorization")
 
     token = get_bearer_token(authorization)
 
     if token is None:
-        return {
-            "error": True
-        }
+        return {"error": True}
 
     content = content.strip()
 
     if content == "":
-        return {
-            "error": True
-        }
+        print("DEBUG 2: content is empty")
+        return {"error": True}
 
     connection = None
     cursor = None
@@ -69,9 +68,8 @@ async def create_message_tool(
         member = cursor.fetchone()
 
         if member is None:
-            return {
-                "error": True
-            }
+            print("DEBUG 3: member not found")
+            return {"error": True}
 
         member = cast(dict[str, Any], member)
 
